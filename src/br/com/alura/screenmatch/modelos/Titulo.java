@@ -17,6 +17,17 @@ public class Titulo implements Comparable<Titulo> {
         this.nome = nome;
     }
 
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        //esta vindo como string , pq minutos vem as vezes 60min
+        this.nome=meuTituloOmdb.title();
+        //pega o meu ano, do jeito   veio, e tenta fazer isso um inteiro
+        this.anoDeLancamento=Integer.valueOf(meuTituloOmdb.year());
+        //da onde q começa e da onde q termina - substring()
+        this.duracaoEmMinutos=Integer.valueOf(meuTituloOmdb.runtime().substring(0,2));
+
+    }
+
+
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " +nome);
         System.out.println("Ano de lançamento: " +anoDeLancamento);
@@ -80,7 +91,8 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public String toString() {
         return "nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento ;
+                ", anoDeLancamento=" + anoDeLancamento + " , " +
+                "Duracção "+ duracaoEmMinutos;
     }
 }
 
