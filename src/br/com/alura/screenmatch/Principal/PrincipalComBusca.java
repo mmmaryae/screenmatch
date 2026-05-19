@@ -35,10 +35,12 @@ public class PrincipalComBusca {
 
         System.out.println(json);
 
+        //declarando o gson-biblioteca q transforma json em objetos java
         Gson gson=new GsonBuilder()
+
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                 .create();
-
+        //transformar em objetos -gson.fromJson
         //Titulo meuTitulo=gson.fromJson(json, Titulo.class);
         TituloOmdb meuTituloOmdb=gson.fromJson(json, TituloOmdb.class);
         Titulo meutitulo = new Titulo(meuTituloOmdb);
