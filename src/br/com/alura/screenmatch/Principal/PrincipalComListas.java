@@ -8,13 +8,13 @@ import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme(1970,"O poderoso chefão");
+        Filme meuFilme = new Filme("O poderoso chefão",1234);
         meuFilme.avalia(9);
-        Filme outroFilme = new Filme(2023,"Avatar");
+        Filme outroFilme = new Filme("Avatar",2023);
         outroFilme.avalia(6);
-        Serie lost = new Serie(2000,"Lost");
+        Serie lost = new Serie("Lost",2000);
 
-        var filmeDoPaulo=new Filme(2003,"Dogville");
+        var filmeDoPaulo=new Filme("Dogville",2003);
         filmeDoPaulo.avalia(10);
 
         List<Titulo> lista =new ArrayList<>();
