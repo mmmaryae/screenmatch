@@ -1,26 +1,13 @@
 package br.com.alura.screenmatch.modelos;
 
-import br.com.alura.screenmatch.calculos.Classificavel;
+public class Serie extends Titulo {
+    private int temporadas;
+    private boolean ativa;
+    private int episodiosPorTemporada;
+    private int minutosPorEpisodio;
 
-public class Serie extends Titulo implements Classificavel {
-private  int temporadas;
-private boolean ativa;
-private int episodiosPorTemporada;
-private int minutosPrEpisodio;
-private int totalVizualizacoes;
-
-
-//construtor
-    public Serie(int anoDeLancamento, String nome) {
-        super(anoDeLancamento, nome);
-    }
-
-    public int getTotalVizualizacoes() {
-        return totalVizualizacoes;
-    }
-
-    public void setTotalVizualizacoes(int totalVizualizacoes) {
-        this.totalVizualizacoes = totalVizualizacoes;
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
     }
 
     public int getTemporadas() {
@@ -47,32 +34,21 @@ private int totalVizualizacoes;
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public int getMinutosPrEpisodio() {
-        return minutosPrEpisodio;
+    public int getMinutosPorEpisodio() {
+        return minutosPorEpisodio;
     }
 
-    public void setMinutosPorEpisodio(int minutosPrEpisodio) {
-        this.minutosPrEpisodio = minutosPrEpisodio;
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+        this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
     @Override
     public int getDuracaoEmMinutos() {
-        return super.getDuracaoEmMinutos();
-    }
-
-    @Override
-    public int getClassificacao() {
-        if (totalVizualizacoes > 100) {
-            return 4;
-            //estrelas
-        } else {
-            //estrelas
-            return 2;
-        }
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
 
     @Override
     public String toString() {
-        return "Serie: "+  this.getNome()+" ("+this.getAnoDeLancamento()+") ";
+        return "Série: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
     }
 }
