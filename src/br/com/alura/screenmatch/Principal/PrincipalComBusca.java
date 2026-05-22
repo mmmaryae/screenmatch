@@ -44,9 +44,16 @@ public class PrincipalComBusca {
             System.out.println("Titulo já convertido");
             System.out.println(meuTitulo);
 
+            //Esse objeto sabe escrever arquivos
+            //filmes.txt" --> É o nome do arquivo que será criado.
+            //“Java, cria/abre um arquivo chamado filmes.txt porque eu quero escrever nele.”
             FileWriter escrita=new FileWriter("filmes.txt");
+            //pega o texto do objeto e escreve no arquivo.
             escrita.write(meuTitulo.toString());
+            //fecha o arquivo corretamente.
             escrita.close();
+
+
         } catch (NumberFormatException e) {
             System.out.println("Aconteceu um erro: ");
             System.out.println(e.getMessage());
